@@ -28,3 +28,16 @@ console.log('Full name size: ', fullName.length)
 console.log(fullName.toUpperCase())
 console.log(fullName.toLocaleLowerCase())
 console.log(fullName.charCodeAt(5))
+
+// métodos comuns de string
+const lastIndexOfA = email.lastIndexOf('a')
+console.log('last occurrence of a on email: ', lastIndexOfA)
+
+const indexOfAt = email.indexOf('@')
+const emailSlice = email.slice(0, indexOfAt)
+console.log('email slice:', emailSlice)
+
+const replaceDotByUndescore = email.replace('.', '_')
+console.log(replaceDotByUndescore)
+const replaceAllDotByUndescore = email.replaceAll('.', '_')
+console.log(replaceAllDotByUndescore)
