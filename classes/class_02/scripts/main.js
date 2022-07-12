@@ -41,3 +41,9 @@ const replaceDotByUndescore = email.replace('.', '_')
 console.log(replaceDotByUndescore)
 const replaceAllDotByUndescore = email.replaceAll('.', '_')
 console.log(replaceAllDotByUndescore)
+
+const str = 'The quick brown fox jumps over the lazy dog.';
+console.log(str.slice(31)) //the lazy dog.
+console.log(str.slice(-4)) // dog.
+console.log(str.slice(35, 39)) // lazy
+console.log(str.slice(-9, -5)) //lazy
