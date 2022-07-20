@@ -3,7 +3,7 @@ const letters = ['a', 'f', 'd', 'a', 'a', 'c', 'b', 'a']
 const indexesOfA = []
 const element = 'a'
 
-// first form of resolution
+// ## first form of resolution
 // let index = -1s
 
 // do {
@@ -11,12 +11,20 @@ const element = 'a'
 //   if (index !== -1) indexesOfA.push(index)
 // } while(index != -1)
 
-// second form of resolution
-let index = letters.indexOf(element)
+// ## second form of resolution
+// let index = letters.indexOf(element)
+
+// while (index !== -1) {
+//   indexesOfA.push(index)
+//   index = letters.indexOf(element, index + 1)
+// }
+
+// ## Third resolution using Array.lastIndexOf()
+let index = letters.lastIndexOf(element)
 
 while (index !== -1) {
   indexesOfA.push(index)
-  index = letters.indexOf(element, index + 1)
+  index = index > 0 ? letters.lastIndexOf(element, index - 1) : -1
 }
 
 // console.log(indexesOfA)
@@ -43,5 +51,6 @@ function updateVegetablesCollection(vegetablesArr, veggie) {
   }
 }
 
-updateVegetablesCollection(veggies, 'spinach');
-updateVegetablesCollection(veggies, 'spinach');
+// remove the comments of the function call for you see the result
+// updateVegetablesCollection(veggies, 'spinach');
+// updateVegetablesCollection(veggies, 'spinach');
