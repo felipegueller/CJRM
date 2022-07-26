@@ -130,13 +130,13 @@ digitada diretamente;
 "d", utilizando o método adequado para isso;
 - Exiba no console a string abaixo, substituindo "SOBREMESA" pela  
 constante que você criou.
-'A SOBREMESA é um doce à base de coco, tradicional na América Latina e em Angola.'
+''
 */
 
 const dessert = `${dogNames[0].slice(-2)}${dogNames[1].slice(-2)}\
 ${dogNames[3].slice(-2)}`.replace('n', 'd')
 
-console.log(dessert)
+// console.log(`A ${dessert} é um doce à base de coco, tradicional na América Latina e em Angola.`)
 
 /*
 12 - Comente o console.log acima e:
