@@ -100,11 +100,13 @@ apenas as letras iniciais dos nomes do array "dogNames";
 */
 
 dogNames.push('Nina')
-const initials1 = `${dogNames[0][0]}${dogNames[1][0]}${dogNames[2][0]}${dogNames[3][0]}${dogNames[4][0]}`
+
+const initials1 = `${dogNames[0][0]}${dogNames[1][0]}${dogNames[2][0]}${dogNames[3][0]}`
 const initials2 = `${
   dogNames.map(item => item[0])
     .reduce((acc, item) => `${acc}${item}`, '')
 }`
+
 // console.log(initials1)
 // console.log(initials2)
 
@@ -134,7 +136,7 @@ constante que você criou.
 const dessert = `${dogNames[0].slice(-2)}${dogNames[1].slice(-2)}\
 ${dogNames[3].slice(-2)}`.replace('n', 'd')
 
-// console.log(dessert)
+console.log(dessert)
 
 /*
 12 - Comente o console.log acima e:
