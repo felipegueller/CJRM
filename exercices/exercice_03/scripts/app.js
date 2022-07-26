@@ -84,7 +84,7 @@ utilizando o método adequado para isso;
 agora é "Lilica".
 */
 
-// console.log(dogNames.pop())
+dogNames.pop()
 // console.log(dogNames[dogNames.length - 1])
 
 
@@ -132,7 +132,7 @@ constante que você criou.
 */
 
 const dessert = `${dogNames[0].slice(-2)}${dogNames[1].slice(-2)}\
-${dogNames[4].slice(-2)}`.replace('n', 'd')
+${dogNames[3].slice(-2)}`.replace('n', 'd')
 
 // console.log(dessert)
 
