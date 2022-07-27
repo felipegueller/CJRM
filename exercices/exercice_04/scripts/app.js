@@ -13,7 +13,8 @@
   "Minhas 3 séries favoritas são: SÉRIE_01, SÉRIE_02 e SÉRIE_03."
 */
 const my3FavoriteTvShows = ['Rick and Morty', 'Cobra Kai', 'Stranger Things']
-const sentence = `Minhas 3 séries favoritas são: ${my3FavoriteTvShows.at(0)}, ${my3FavoriteTvShows.at(1)} e ${my3FavoriteTvShows.at(2)}`
+const sentence = `Minhas 3 séries favoritas são: ${my3FavoriteTvShows.join(', ')}.`
+  .replace(', S', ' e S')
 
 // console.log(sentence)
 
@@ -37,9 +38,9 @@ const sentence = `Minhas 3 séries favoritas são: ${my3FavoriteTvShows.at(0)}, 
 */
 
 const randomTVShow = 'Watchmen'
-const isRandomTvShowIncluded = my3FavoriteTvShows.includes(randomTVShow)
+const isRandomTVShowIncluded = my3FavoriteTvShows.includes(randomTVShow)
 
-// console.log(isRandomTvShowIncluded)
+// console.log(isRandomTVShowIncluded)
 
 /*
   04 - Comente o console.log() acima e:
@@ -52,7 +53,7 @@ const isRandomTvShowIncluded = my3FavoriteTvShows.includes(randomTVShow)
   "O tipo de dado que a const "isRandomTVShowIncluded" armazena é: TIPO_DE_DADO."
 */
 
-const typeSentence = `O tipo de dado que a const "isRandomTVShowIncluded" armazena é: ${typeof isRandomTvShowIncluded}`
+const typeSentence = `O tipo de dado que a const "isRandomTVShowIncluded" armazena é: ${typeof isRandomTVShowIncluded}.`
 
 // console.log(typeSentence)
 /*
@@ -72,7 +73,7 @@ const typeSentence = `O tipo de dado que a const "isRandomTVShowIncluded" armaze
 const caracteresNumber = 39
 const didSetenceHad39caracters = typeSentence.length > caracteresNumber
 
-// console.log(`A string que a "typeSentence" armazena tem mais de ${caracteresNumber}  caracteres? ${(String(didSetenceHad39caracters)).replace('t', 'T')}.`)
+// console.log(`"A string que a "typeSentence" armazena tem mais de ${caracteresNumber} caracteres? ${(String(didSetenceHad39caracters)).replace('t', 'T')}.`)
 
 /*
   06 - Comente o console.log() acima e:
@@ -86,7 +87,7 @@ const didSetenceHad39caracters = typeSentence.length > caracteresNumber
 
 const falsyValues = [0, "", false, '', ``, null, undefined, NaN]
 
-// console.log(`Todos os ${falsyValues.length} itens do array "falsyValues" são falsy. Inclusive o  BOOLEAN.`)
+// console.log(`Todos os ${falsyValues.length} itens do array "falsyValues" são falsy. Inclusive o ${falsyValues[2]}.`)
 
 /*
   07 - Comente o console.log() acima e:
@@ -143,4 +144,4 @@ const isNotAString = typeof randomTVShow !== 'string'
 
 const evenNumbers = [0, 2, 4, 6, 8, 10]
 
-console.log(evenNumbers.indexOf(8) !== -1)
+// console.log(evenNumbers.indexOf(8) !== -1)
