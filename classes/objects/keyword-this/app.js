@@ -20,15 +20,16 @@ let user = {
   },
   thisFunctionDeclaration () {
     console.log('Referencia o objeto que invoca o método: ')
-    console.log(this)
+    console.log(this) // user object
   },
   thisArrowFunction: () => {
     console.log('Referencia o objeto do escopo no qual o método foi invocado: ')
-    console.log(this)
+    console.log(this) // window object
   }
 }
 
+user.thisArrowFunction() 
+
 user.logBlobPost()
 
-user.thisArrowFunction()
 user.thisFunctionDeclaration()
