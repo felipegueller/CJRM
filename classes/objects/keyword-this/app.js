@@ -3,7 +3,10 @@ let user = {
   age: 25,
   email: 'felipe.gueller@gmail.com',
   federativeUnit: 'ES',
-  blogPost: ['Falar sobre animais', 'Duolingo, aplicativo de idiomas'],
+  blogPost: [
+    { title: 'Falar sobre animais', likes: 30 },
+    { title: 'Duolingo, aplicativo de idiomas', likes: 40}
+  ],
   login: function () {
     console.log('Usuário logado')
   },
@@ -13,7 +16,7 @@ let user = {
   logBlobPost () {
     console.log(`O usuário ${this.name} escreveu os seguintes posts:`)
 
-    this.blogPost.forEach(post => console.log(post))
+    this.blogPost.forEach(post => console.log(`\tTítulo: ${post.title}\n\tCurtidas: ${post.likes}`))
   },
   sintaxSugar () {
     console.log('Function declaration em objetos de maneira reduzida')
