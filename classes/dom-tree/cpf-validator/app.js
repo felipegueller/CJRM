@@ -26,6 +26,14 @@ const getRestOfSum = (cpf, digitsToVerify, multiplier) => {
   return isRestTenOrEleven ? 0 : rest
 }
 
+const verifyDigit = (cpf, digitPosition, quantityDigitsToVerify, multiplier) => {
+  const digit = Number(cpf.at(digitPosition))
+  const restOfSum = getRestOfSum(cpf, quantityDigitsToVerify, multiplier)
+  const isDigitInvalid = digit !== restOfSum
+
+  return isDigitInvalid
+}
+
 const validateCPF = cpf => {
   const formatedCPF = cpf.replace(/\D/g, '')
   const invalidCPFValues = getInvalidCPFValues()
@@ -34,16 +42,14 @@ const validateCPF = cpf => {
     !formatedCPF ||
     formatedCPF.length !== 11 ||
     invalidCPFValues.includes(formatedCPF)
+
   if (isAnInvalidValue) return false
 
-  const firstVerifierDigit = Number(formatedCPF.at(9))
-  const sumRestFromFisrtDigit = getRestOfSum(formatedCPF, 9, 11)
-  const isFirstDigitInvalid = firstVerifierDigit !== sumRestFromFisrtDigit
+  const isFirstDigitInvalid = verifyDigit(formatedCPF, 9, 9, 11)
   if (isFirstDigitInvalid) return false
 
-  const secondVerifierDigit = Number(formatedCPF.at(10))
-  const sumRestFromSeconfDigit = getRestOfSum(formatedCPF, 10, 12)
-  const isSecondDigitInvalid = secondVerifierDigit !== sumRestFromSeconfDigit
+  const isSecondDigitInvalid = verifyDigit(formatedCPF, 10, 10, 12)
+  if (isFirstDigitInvalid) return false
 
   return isSecondDigitInvalid ? false : true
 }
