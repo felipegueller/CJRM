@@ -1,0 +1,13 @@
+.box {
+    margin: 10px 0;
+    padding: 1.25rem;
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    background-color: #ee33aa;
+    color: #fff;
+    border-radius: 4px;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: move;
+}
