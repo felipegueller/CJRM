@@ -22,27 +22,32 @@ const getValidationMassage = (elementTag, flag) => {
     button: {
       success: {
         message: 'Dados enviados =)',
-        cssClass: 'submit-success-feedback'
+        cssClass: 'submit-success-feedback',
+        dataFeedback: 'submit-feedback'
       },
       error: {
         message: 'Por favor, insira um username válido',
-        cssClass: 'submit-help-feedback'
+        cssClass: 'submit-help-feedback',
+        dataFeedback: 'submit-feedback'
       }
     },
     input: {
       success: {
         message: 'Username válido =)',
-        cssClass: 'username-success-feedback'
+        cssClass: 'username-success-feedback',
+        dataFeedback: 'username-feedback'
       },
       error: {
         message: "O valor deve conter no mínimo 6 caracteres, " +
         "com apenas letras maiúsculas e/ou minúsculas",
-        cssClass: 'username-help-feedback'
+        cssClass: 'username-help-feedback',
+        dataFeedback: 'username-feedback'
       }
     },
     default: {
       message: 'Valor inválido :(',
-      cssClass: 'submit-help-feedback'
+      cssClass: 'submit-help-feedback',
+      dataFeedback: 'submit-feedback'
     }
   }
 
@@ -52,17 +57,22 @@ const getValidationMassage = (elementTag, flag) => {
 const setValidationMessage = (isValid, element) => {
   const tagName = element.tagName.toLowerCase();
   const paragraph = getParagraphReferenceByElement(element);
-  const { message, cssClass } = isValid
+  const { message, cssClass, dataFeedback } = isValid
     ? getValidationMassage(tagName, 'success')
     : getValidationMassage(tagName, 'error')
 
 
   paragraph.textContent = message
   paragraph.setAttribute('class', cssClass)
+  paragraph.setAttribute('data-feedback', dataFeedback)
 }
 
-const handleKeyUp = () => {
+const handleInput = () => {
   const isAValidUsername = validateUsername(username.value)
+  const submitParagraph = username.parentElement.querySelector('button + p[data-feedback="submit-feedback"]')
+
+  if(submitParagraph) submitParagraph.remove()
+  
   setValidationMessage(isAValidUsername, username)
 }
 
@@ -74,7 +84,7 @@ const handleSubmit = event => {
   setValidationMessage(isAValidUsername, button)
 }
 
-username.addEventListener('keyup', handleKeyUp)
+username.addEventListener('input', handleInput)
 form.addEventListener('submit', handleSubmit)
 
 /*
